@@ -119,7 +119,7 @@ class FirebaseChatCore {
     // Check if room already exist.
     if (roomQuery.docs.isNotEmpty) {
       final room = (await processRoomsQuery(
-        fu,
+        FirebaseAuth.instance.currentUser!,
         getFirebaseFirestore(),
         roomQuery,
         config.usersCollectionName,
